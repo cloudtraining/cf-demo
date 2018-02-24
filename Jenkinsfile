@@ -15,7 +15,12 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying...'
-                // TODO: cf login with credentials, then cf deploy
+                pushToCloudFoundry(
+                    target: 'api.run.pivotal.io',
+                    organization: 'cloudtraining.io',
+                    cloudSpace: 'development',
+                    credentialsId: 'pcf'
+                )
             }
         }
     }
