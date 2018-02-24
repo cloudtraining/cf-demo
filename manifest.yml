@@ -1,0 +1,4 @@
+---
+applications:
+  - name: demo
+    random-route: true
