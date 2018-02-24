@@ -8,12 +8,16 @@ pipeline {
             steps {
                 echo 'Building...'
                 sh './mvnw verify'
-                junit '**/target/surefire-reports/*.xml'
                 archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
             }
         }
         stage('Deploy') {
             steps {
+                when {
+                    expression {
+                        env.BRANCH_NAME == 'master'
+                    }
+                }
                 echo 'Deploying...'
                 pushToCloudFoundry(
                     target: 'api.run.pivotal.io',
@@ -22,6 +26,15 @@ pipeline {
                     credentialsId: 'pcf'
                 )
             }
+        }
+    }
+
+    post {
+        always {
+            junit '**/target/surefire-reports/*.xml'
+        }
+        failure {
+            mail to: 'boards+jenkinsdemo@gmail.com', subject: "${env.JOB_NAME} failed", body: "For more details: ${env.JENKINS_URL}"
         }
     }
 }
