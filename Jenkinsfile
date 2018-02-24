@@ -3,21 +3,23 @@
 pipeline {
     agent any
 
+    tools {
+        maven 'apache-maven-3.5.2'
+    }
+
     stages {
         stage('Build & Test') {
             steps {
                 echo 'Building...'
-                sh './mvnw verify'
+                sh 'mvn verify'
                 archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
             }
         }
         stage('Deploy') {
+            when {
+                branch 'master'
+            }
             steps {
-                when {
-                    expression {
-                        env.BRANCH_NAME == 'master'
-                    }
-                }
                 echo 'Deploying...'
                 pushToCloudFoundry(
                     target: 'api.run.pivotal.io',
