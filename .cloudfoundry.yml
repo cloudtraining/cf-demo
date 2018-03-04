@@ -1,3 +1,6 @@
-name: cf-demo
-random-route: true
-path: .
+---
+applications:
+  - name: cf-demo
+    random-route: true
+    path: .
+    buildpack: java_buildpack
