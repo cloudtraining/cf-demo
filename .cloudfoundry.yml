@@ -2,5 +2,4 @@
 applications:
   - name: cf-demo
     random-route: true
-    path: .
-    buildpack: java_buildpack
+    path: ./target/app.jar
