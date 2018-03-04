@@ -1,0 +1,14 @@
+resources:
+  - name: cf-demo
+    type: git
+    source:
+      uri: https://github.com/cloudtraining/cf-demo
+      branch: master
+
+jobs:
+  - name: demo-app
+    plan:
+      - get: cf-demo
+        trigger: true
+      - task: tests
+        file: cf-demo/build.yml
