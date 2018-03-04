@@ -11,4 +11,4 @@ jobs:
       - get: cf-demo
         trigger: true
       - task: tests
-        file: cf-demo/build.yml
+        file: cf-demo/.concourse.yml
