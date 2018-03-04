@@ -4,6 +4,14 @@ resources:
     source:
       uri: https://github.com/cloudtraining/cf-demo
       branch: master
+  - name: cf-dev
+    type: cf
+    source:
+      api: https://api.run.pivotal.io
+      username: FIXME
+      password: FIXME
+      organization: cloudtraining.io
+      space: development
 
 jobs:
   - name: demo-app
@@ -12,3 +20,6 @@ jobs:
         trigger: true
       - task: tests
         file: cf-demo/.concourse.yml
+      - put: cf-dev
+        params:
+          manifest: cf-demo/.cloudfoundry.yml

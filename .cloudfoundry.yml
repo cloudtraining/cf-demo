@@ -1,5 +1,5 @@
 ---
 applications:
-  - name: cloud-demo
+  - name: cf-demo
     random-route: true
     path: target/app.jar
