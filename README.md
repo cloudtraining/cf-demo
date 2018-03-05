@@ -41,6 +41,10 @@ Using the provided Jenkinsfile, this should build and deploy automatically.
 
 ## Concourse Setup
 
+First, generate SSH keys for Concourse web and slaves via the included script:
+
+    ./init-concourse-keys.sh
+
 Download and run Concourse via Docker:
 
     docker-compose up
@@ -49,7 +53,8 @@ Using the `fly` CLI tool from Concourse, log in to your instance (replace `local
 
     fly -t lite login -c http://localhost:8080 -u concourse -p changeme
 
-Next, upload this project's pipeline:
+Next, edit `pipeline.yml` and change the username and password attributes to your Cloud Foundry details.
+Then, upload that configuration to Concourse via:
 
     fly -t lite set-pipeline -c pipeline.yml -p cf-demo
 
@@ -58,3 +63,4 @@ Finally, unpause the pipeline to start it:
     fly -t lite unpause-pipeline -p cf-demo
 
 Now you can navigate to http://localhost:8080/teams/main/pipelines/cf-demo/ to see the status of this pipeline.
+(Docker Toolbox users navigate to http://192.168.99.100:8080/teams/main/pipelines/cf-demo/ instead).
