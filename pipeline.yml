@@ -19,7 +19,7 @@ jobs:
       - get: cf-demo
         trigger: true
       - task: tests
-        file: cf-demo/.concourse.yml
+        file: ./.concourse.yml
       - put: cf-dev
         params:
           manifest: cf-demo/.cloudfoundry.yml
