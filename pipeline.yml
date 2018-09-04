@@ -3,13 +3,13 @@ resources:
     type: git
     source:
       uri: https://github.com/cloudtraining/cf-demo
-      branch: master
+      branch: concourse
   - name: cf-dev
     type: cf
     source:
       api: https://api.run.pivotal.io
-      username: FIXME
-      password: FIXME
+      username: student@cloudtraining.io
+      password: Welcome123!
       organization: cloudtraining.io
       space: development
 
