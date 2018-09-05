@@ -2,4 +2,4 @@
 applications:
   - name: cf-demo
     random-route: true
-    path: ./target/app.jar
+    path: target/app.jar
