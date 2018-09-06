@@ -8,10 +8,11 @@ image_resource:
 inputs:
   - name: cf-demo
 outputs: 
-  - name: cf-demo-outputs
+  - name: artifact-dir
 
 run:
   dir: cf-demo
   path: ./mvnw
   args:
-    - install
+    - install 
+      cp ./target/app.jar artifact-dir
