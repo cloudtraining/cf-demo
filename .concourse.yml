@@ -7,6 +7,8 @@ image_resource:
 
 inputs:
   - name: cf-demo
+outputs: 
+  - name: cf-demo-outputs
 
 run:
   dir: cf-demo
