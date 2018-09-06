@@ -12,7 +12,9 @@ outputs:
 
 run:
   dir: cf-demo
-  path: ./mvnw
+  path: sh 
   args:
-    - install 
-      cp ./target/app.jar artifact-dir
+    - -c 
+    - ./mvnw install
+      mkdir artifact-dir/target 
+      cp ./target/app.jar artifact-dir/target
