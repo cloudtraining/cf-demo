@@ -17,5 +17,5 @@ run:
     - -c 
     - | 
       ./mvnw install
-      mkdir -p artifact-dir/target 
-      cp ./target/app.jar artifact-dir/target
+      mkdir ../ artifact-dir/target 
+      cp ./target/app.jar ../artifact-dir/target
