@@ -4,7 +4,7 @@ resources:
     source:
       uri: https://github.com/cloudtraining/cf-demo
       branch: concourse
-  - name: cf-dev
+  - name: cf-development
     type: cf
     source:
       api: https://api.run.pivotal.io
@@ -18,8 +18,9 @@ jobs:
     plan:
       - get: cf-demo
         trigger: true
-      - task: tests
-        file: ./.concourse.yml
-      - put: cf-dev
+      - task: build-and-test
+        file: cf-demo/.concourse.yml
+      - put: cf-development
         params:
-          manifest: cf-demo/.cloudfoundry.yml
+          manifest: cf-demo/.cloudfoundry-concourse.yml
+          path: artifact-dir
