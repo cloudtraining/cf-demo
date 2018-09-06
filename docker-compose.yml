@@ -34,6 +34,9 @@ services:
       CONCOURSE_POSTGRES_DATABASE: concourse
       CONCOURSE_ADD_LOCAL_USER: concourse:changeme
       CONCOURSE_MAIN_TEAM_ALLOW_ALL_USERS: "true"
+      http_proxy: http://192.168.56.1:3128
+      https_proxy: http://192.168.56.1:3128
+      no_proxy: localhost,127.0.0.1,192.168.56.119
 
   concourse-worker:
     image: concourse/concourse
