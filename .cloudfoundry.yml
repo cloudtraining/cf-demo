@@ -1,5 +1,5 @@
 ---
 applications:
-  - name: cf-demo-master
+  - name: cf-demo-concourse
     random-route: true
     path: target/app.jar
