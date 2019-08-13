@@ -19,3 +19,5 @@ run:
       ./mvnw clean install
       mkdir ../artifact-dir/target
       cp ./target/app.jar ../artifact-dir/target
+      find . > list.txt
+      cat list.txt
