@@ -19,8 +19,8 @@ run:
     - |
       echo EYECATCHER $PWD > list-dirs.txt
       find . >> list-dirs.txt
-      echo EYECATCHER $PWD (back one) >> list-dirs.txt
+      echo EYECATCHER $PWD back one >> list-dirs.txt
       find .. >> list-dirs.txt
-      echo EYECATCHER $PWD (back one) two list-dirs.txt
+      echo EYECATCHER $PWD back one two list-dirs.txt
       find ../.. >> list-dirs.txt
       cat list-dirs.txt
