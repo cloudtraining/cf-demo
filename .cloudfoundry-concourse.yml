@@ -4,4 +4,4 @@ applications:
     random-route: true
     buildpacks:
       - java_buildpack
-    path: ./artifact-dir/target/app.jar
+    path: /tmp/build/put/artifact-dir/target/app.jar
