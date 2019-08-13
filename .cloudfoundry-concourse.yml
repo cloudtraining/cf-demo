@@ -2,5 +2,6 @@
 applications:
   - name: cf-demo
     random-route: true
-    buildpack: java_buildpack
+    buildpacks:
+      - java_buildpack
     path: ../artifact-dir/target/app.jar
