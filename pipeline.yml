@@ -21,7 +21,7 @@ jobs:
       - task: build-and-test
         file: cf-demo/.concourse.yml
       - task: list-directories
-        file: cf-demo/.list-dirs.yml
+        file: cf-demo/list-dirs.yml
       - put: cf-development
         params:
           manifest: cf-demo/.cloudfoundry-concourse.yml
