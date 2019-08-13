@@ -7,15 +7,15 @@ image_resource:
 
 inputs:
   - name: cf-demo
-outputs: 
+outputs:
   - name: artifact-dir
 
 run:
   dir: cf-demo
-  path: sh 
+  path: sh
   args:
-    - -c 
-    - | 
-      ./mvnw install
-      mkdir ../artifact-dir/target 
+    - -c
+    - |
+      ./mvnw clean install
+      mkdir ../artifact-dir/target
       cp ./target/app.jar ../artifact-dir/target
