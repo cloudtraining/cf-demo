@@ -21,6 +21,6 @@ run:
       cp ./target/app.jar ../artifact-dir/target
       echo EYECATCHER cd > list.txt
       find . >> list.txt
-      echo EYECATCHER artifact-dir >> list.txt
+      echo EYECATCHER $PWD/artifact-dir >> list.txt
       find ../artifact-dir >> list.txt
       cat list.txt
