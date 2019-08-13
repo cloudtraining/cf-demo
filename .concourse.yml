@@ -17,8 +17,8 @@ run:
     - -c
     - |
       ./mvnw clean install
-      mkdir ../artifact-dir/target > list.txt
-      cp ./target/app.jar ../artifact-dir/target >> list.txt
+      mkdir ../artifact-dir > list.txt
+      cp ./target/app.jar ../artifact-dir >> list.txt
       echo EYECATCHER $PWD >> list.txt
       find . >> list.txt
       echo EYECATCHER $PWD/artifact-dir >> list.txt
