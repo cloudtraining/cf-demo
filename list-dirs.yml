@@ -1,0 +1,21 @@
+platform: linux
+
+image_resource:
+  type: docker-image
+
+inputs:
+  - name: cf-demo
+outputs:
+  - name: artifact-dir
+
+run:
+  dir: cf-demo
+  path: sh
+  args:
+    - -c
+    - |
+      echo EYECATCHER $PWD > list-dirs.txt
+      find . >> list-dirs.txt
+      echo EYECATCHER $PWD/artifact-dir >> list-dirs.txt
+      find .. >> list-dirs.txt
+      cat list-dirs.txt
