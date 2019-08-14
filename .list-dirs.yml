@@ -19,8 +19,6 @@ run:
     - |
       echo EYECATCHER $PWD > list-dirs.txt
       find . >> list-dirs.txt
-      echo EYECATCHER $PWD back one >> list-dirs.txt
-      find .. >> list-dirs.txt
-      echo EYECATCHER $PWD back one two list-dirs.txt
-      find ../.. >> list-dirs.txt
+      echo EYECATCHER /tmp/build/put/artifact-dir >> list-dirs.txt
+      find /tmp/build/put/artifact-dir >> list-dirs.txt
       cat list-dirs.txt

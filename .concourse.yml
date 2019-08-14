@@ -17,10 +17,10 @@ run:
     - -c
     - |
       ./mvnw clean install
-      mkdir -p /tmp/build/cf-demo/artifact-dir > list.txt
-      cp ./target/app.jar /tmp/build/cf-demo/artifact-dir >> list.txt
+      mkdir -p /tmp/build/put/artifact-dir > list.txt
+      cp ./target/app.jar /tmp/build/put/artifact-dir >> list.txt
       echo EYECATCHER $PWD >> list.txt
       find . >> list.txt
-      echo EYECATCHER /tmp/build/cf-demo/artifact-dir >> list.txt
-      find /tmp/build/cf-demo/artifact-dir >> list.txt
+      echo EYECATCHER /tmp/build/put/artifact-dir >> list.txt
+      find /tmp/build/put/artifact-dir >> list.txt
       cat list.txt
