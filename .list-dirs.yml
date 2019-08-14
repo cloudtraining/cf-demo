@@ -17,7 +17,7 @@ run:
   args:
     - -c
     - |
-      echo EYECATCHER $PWD > list-dirs.txt
+      echo EYECATCHER $PWD find . > list-dirs.txt
       find . >> list-dirs.txt
       echo EYECATCHER /tmp/build/put/artifact-dir >> list-dirs.txt
       find /tmp/build/put/artifact-dir >> list-dirs.txt
