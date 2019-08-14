@@ -4,4 +4,4 @@ applications:
     random-route: true
     buildpacks:
       - java_buildpack
-    path: ../artifact-dir/app.jar
+    path: /tmp/build/cf-demo/artifact-dir/app.jar
